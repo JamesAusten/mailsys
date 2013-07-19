@@ -38,8 +38,12 @@
 |
 */
 
+$route['lists/(:any)'] = 'lists/$1';
+$route['lists'] = 'lists';
+$route['login/(:any)'] = 'login/$1';
+$route['login'] = 'login';
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'login';
 $route['404_override'] = '';
 
 

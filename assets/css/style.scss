@@ -1,0 +1,88 @@
+/*
+  style.css
+  Mail System style
+  
+  Colour scheme: http://colorschemedesigner.com/#3.21TrMMlw0w0
+  
+  Elderberry Development
+  http://www.elderberry-dev.co.uk
+*/
+
+$main-color: #2a80d6;
+$lighter: #5da5eb;
+$highlight: #ffa522;
+$siteUrl: 'http://localhost/mailsys/';
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin input-default() {
+  // width: 265px;
+  height: 35px;
+  padding: 0px 10px;
+  @include rounded();
+}
+
+body {
+  font-family: Verdana;
+  font-size: 11px;
+  background: url('#{$siteUrl}images/background.png');
+}
+
+input[type="text"], input[type="password"] {
+  @include input-default; 
+  border: 1px solid #ccc;
+  color: #9e9e9e;
+}
+
+input[type="button"], input[type="submit"] {
+  color: #fff;
+  background: $main-color;
+  border: 1px solid darken($main-color, 5%);
+  cursor: pointer;
+  @include input-default;
+  &:hover { background: lighten($main-color, 10%); }
+}
+
+.error {
+  display: block;
+  margin: 5px 0px 10px 0px;
+  color: #d43737;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  margin: 5px 0px 15px 0px;
+  display: block;
+  border-bottom: 1px solid #fff;
+}
+
+#login-form {
+  width: 305px;
+  // height: 210px;
+  background: #ededed;
+  border: 1px solid #666;
+  margin: 200px auto;
+  padding: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  
+  @include rounded(10px);
+  
+  input[type="text"], input[type="password"] { width: 283px; }
+  input[type="submit"] { width: 305px; }
+  
+  h1 {
+    color: #666;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+    font: {
+      size: 24px;
+      weight: normal;
+    }
+  }
+}
